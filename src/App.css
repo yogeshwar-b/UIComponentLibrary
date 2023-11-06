@@ -1,0 +1,15 @@
+:is(.dark .dark-home-bg) {
+  background-color: black;
+}
+
+.home-bg {
+  background-color: rgb(212, 73, 73);
+}
+
+:is(.dark .dark-text) {
+  color: white;
+}
+
+.text {
+  color: black;
+}
