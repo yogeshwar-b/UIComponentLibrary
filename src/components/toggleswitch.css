@@ -1,0 +1,37 @@
+.switch {
+  height: 100px;
+  width: 200px;
+}
+
+.switch input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.switch-shape {
+  position: absolute;
+  background-color: aliceblue;
+  height: 100px;
+  width: 200px;
+  transition: 1s;
+}
+
+.switch-shape::before {
+  content: "";
+  position: absolute;
+  background-color: brown;
+  top: 5px;
+  left: 5px;
+  height: 90px;
+  width: 90px;
+  transition: 1s;
+}
+
+.switch input:checked + .switch-shape {
+  background-color: green;
+}
+
+.switch input:checked + .switch-shape::before {
+  transform: translateX(95px);
+}
