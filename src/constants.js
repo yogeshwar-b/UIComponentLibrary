@@ -1,2 +1,2 @@
-export const defaultselection='ToggleSwitch'
-export const ComponentList= ['ThemeButton','ToggleSwitch']
+export const defaultselection='ArcadeButton'
+export const ComponentList= ['ThemeButton','ToggleSwitch','ArcadeButton']

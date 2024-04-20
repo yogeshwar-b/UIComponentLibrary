@@ -3,6 +3,7 @@ import './App.css';
 import ToggleSwitch from './components/toggleswitch';
 import ThemeButton from './components/ThemeButton/ThemeButton';
 import { defaultselection, ComponentList } from './constants';
+import ArcadeButton from './components/ArcadeButton/ArchadeButton';
 /**
  * Returns text Initial Project.
  * @todo Handle the default theme with checkbox
@@ -42,6 +43,8 @@ function RenderComponent(SelectedItem) {
       );
     case 'ToggleSwitch':
       return <ToggleSwitch></ToggleSwitch>;
+    case 'ArcadeButton':
+      return <ArcadeButton></ArcadeButton>;
     default:
       return (
         <div>
