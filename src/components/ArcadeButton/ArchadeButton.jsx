@@ -1,5 +1,5 @@
 const ArcadeButton = () => {
-  return <>Arcade Button</>;
-};
+  return <>Arcade Button</>
+}
 
-export default ArcadeButton;
+export default ArcadeButton
