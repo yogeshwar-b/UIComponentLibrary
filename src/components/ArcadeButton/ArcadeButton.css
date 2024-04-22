@@ -1,0 +1,45 @@
+.root-div {
+  height: 4rem;
+  aspect-ratio: 1;
+}
+
+.checkbox-hide {
+  display: none;
+}
+
+.btn-box {
+  width: 3rem;
+  display: grid;
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 1rem;
+  /* background-color: white; */
+  padding: 0.5rem;
+  place-content: center;
+  /* border-radius: 25%; */
+}
+
+/* .btn-box > div {
+  display: none;
+} */
+.btn-box input + span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(124, 1, 32);
+  z-index: -10;
+  border-radius: 1rem;
+  border: 2px solid;
+  box-shadow: inset 0 5px 1px rgb(173, 21, 21), 0 5px 5px rgb(31, 31, 31),
+    0 15px 15px rgb(20, 20, 20);
+}
+
+.btn-box input:checked + span {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(227, 6, 14);
+}
+
+.icon-div {
+  font-size: 2rem;
+}
