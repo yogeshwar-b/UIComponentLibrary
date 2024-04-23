@@ -4,7 +4,11 @@ const BtnId = 'Test'
 const BtnLabel = 'X'
 
 const ArcadeButton = () => {
-  return <div>ArcadeButton</div>
+  return (
+    <button className='btn-bg'>
+      <span className='btn-fg'> Click me</span>
+    </button>
+  )
 }
 
 export default ArcadeButton

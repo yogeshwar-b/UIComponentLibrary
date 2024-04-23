@@ -3,7 +3,7 @@ import './App.css'
 import ToggleSwitch from './components/toggleswitch'
 import ThemeButton from './components/ThemeButton/ThemeButton'
 import { defaultselection, ComponentList } from './constants'
-import ArcadeButton from './components/ArcadeButton/ArchadeButton'
+import ArcadeButton from './components/ArcadeButton/ArcadeButton'
 /**
  * Returns text Initial Project.
  * @todo Handle the default theme with checkbox
