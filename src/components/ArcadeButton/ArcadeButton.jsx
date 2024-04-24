@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import '../ArcadeButton/ArcadeButton.css'
 
+/**
+ *
+ * Maintains clicked state
+ */
 const ArcadeButton = () => {
   const [btnstate, changebtnstate] = useState('default') // default,pressed,released
   var cssclass = 'btn-fg btn-fg-color-default'
@@ -26,7 +30,13 @@ const ArcadeButton = () => {
             : 'btn-fg-pos-default default-colors')
         }
       >
-        Click me
+        <div
+          className={
+            btnstate == 'pressed' ? 'txt-pos-pressed' : 'txt-pos-default'
+          }
+        >
+          Click me
+        </div>
       </span>
     </button>
   )

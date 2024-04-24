@@ -1,11 +1,11 @@
-@property --colshade1 {
+@property --fg-color1 {
   /* darker */
   syntax: '<color>';
   initial-value: #555555;
   inherits: false;
 }
 
-@property --colshade2 {
+@property --fg-color2 {
   /* lighter */
   syntax: '<color>';
   initial-value: #7c7c7c;
@@ -13,15 +13,29 @@
 }
 
 @property --text-color {
-  /* lighter */
+  /* Text color */
   syntax: '<color>';
   initial-value: #000000;
   inherits: false;
 }
 
+@property --bg-color1 {
+  /* darker */
+  syntax: '<color>';
+  initial-value: #262626;
+  inherits: false;
+}
+
+@property --bg-color2 {
+  /* lighter */
+  syntax: '<color>';
+  initial-value: #767676;
+  inherits: false;
+}
+
 .btn-bg {
   aspect-ratio: 1;
-  background: gray;
+  background: linear-gradient(290deg, var(--bg-color1), var(--bg-color2));
   border-radius: 1em;
   box-shadow: none;
   border: none;
@@ -30,7 +44,7 @@
 }
 
 .btn-bg-pressed {
-  background: #524400;
+  background: linear-gradient(290deg, var(--bg-color1), var(--bg-color2));
 }
 
 .btn-fg {
@@ -39,29 +53,38 @@
   padding: 0.5rem;
   border-radius: 1em;
   aspect-ratio: 1;
-  background-image: linear-gradient(290deg, var(--colshade1), var(--colshade2));
+  background-image: linear-gradient(290deg, var(--fg-color1), var(--fg-color2));
   color: transparent;
 }
 
 .btn-fg-pos-default {
   transform: translateY(-0.6rem);
-  transition: transform 250ms cubic-bezier(0, 0, 0.26, 2.16), --colshade1 500ms,
-    --colshade2 500ms;
+  transition: transform 250ms cubic-bezier(0, 0, 0.26, 2.16), --fg-color1 500ms,
+    --fg-color2 500ms;
 }
 
 .btn-fg-pos-pressed {
   transform: translateY(-0.1rem);
   color: var(--text-color);
   transition: transform 150ms linear(0 0%, 1.23 20.19%, 1.22 77.54%, 1 100%),
-    --colshade1 500ms, --colshade2 500ms, color 250ms ease-in;
+    --fg-color1 500ms, --fg-color2 500ms, color 250ms ease-in;
 }
 
 .orange-colors {
-  --colshade1: #f94b06;
-  --colshade2: #ffa05a;
+  --fg-color1: #f94b06;
+  --fg-color2: #ffa05a;
 }
 
 .default-colors {
-  --colshade1: #555555;
-  --colshade2: #7c7c7c;
+  --fg-color1: #555555;
+  --fg-color2: #7c7c7c;
+}
+
+.txt-pos-default {
+  transform: translateY(1rem);
+}
+
+.txt-pos-pressed {
+  transform: translateY(0rem);
+  transition: transform 150ms ease-in;
 }
