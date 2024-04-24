@@ -1,11 +1,36 @@
+@property --colshade1 {
+  /* darker */
+  syntax: '<color>';
+  initial-value: #555555;
+  inherits: false;
+}
+
+@property --colshade2 {
+  /* lighter */
+  syntax: '<color>';
+  initial-value: #7c7c7c;
+  inherits: false;
+}
+
+@property --text-color {
+  /* lighter */
+  syntax: '<color>';
+  initial-value: #000000;
+  inherits: false;
+}
+
 .btn-bg {
   aspect-ratio: 1;
-  background: rgb(167, 0, 0);
+  background: gray;
   border-radius: 1em;
   box-shadow: none;
   border: none;
   padding: 0;
   outline: none;
+}
+
+.btn-bg-pressed {
+  background: #524400;
 }
 
 .btn-fg {
@@ -14,21 +39,29 @@
   padding: 0.5rem;
   border-radius: 1em;
   aspect-ratio: 1;
-}
-
-.btn-fg-color-default {
-  background-color: rgb(181, 181, 181);
+  background-image: linear-gradient(290deg, var(--colshade1), var(--colshade2));
+  color: transparent;
 }
 
 .btn-fg-pos-default {
   transform: translateY(-0.6rem);
-  transition: all 250ms cubic-bezier(0, 0, 0.26, 2.16);
+  transition: transform 250ms cubic-bezier(0, 0, 0.26, 2.16), --colshade1 500ms,
+    --colshade2 500ms;
 }
 
 .btn-fg-pos-pressed {
   transform: translateY(-0.1rem);
-  transition: all 150ms linear;
+  color: var(--text-color);
+  transition: transform 150ms linear(0 0%, 1.23 20.19%, 1.22 77.54%, 1 100%),
+    --colshade1 500ms, --colshade2 500ms, color 250ms ease-in;
 }
-/* .btn-fg-pos-default:hover {
-  transform: translateY(-0.8rem);
-} */
+
+.orange-colors {
+  --colshade1: #f94b06;
+  --colshade2: #ffa05a;
+}
+
+.default-colors {
+  --colshade1: #555555;
+  --colshade2: #7c7c7c;
+}
