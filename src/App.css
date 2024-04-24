@@ -13,3 +13,11 @@
 .text {
   color: black;
 }
+body {
+  margin: 1rem;
+  border: solid 1px gray;
+}
+select {
+  display: block;
+  margin-bottom: 1rem;
+}
