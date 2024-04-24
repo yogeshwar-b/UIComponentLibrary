@@ -8,20 +8,27 @@
   outline: none;
 }
 
-.btn-bg .btn-fg {
+.btn-fg {
   display: grid;
   place-content: center;
   padding: 0.5rem;
-  background-color: rgb(181, 181, 181);
   border-radius: 1em;
   aspect-ratio: 1;
-  transform: translateY(-0.6rem);
-}
-.btn-bg .btn-fg:hover {
-  transform: translateY(-0.8rem);
 }
 
-.btn-bg:active .btn-fg {
-  transform: translateY(-0.1px);
-  transition: all 250ms;
+.btn-fg-color-default {
+  background-color: rgb(181, 181, 181);
 }
+
+.btn-fg-pos-default {
+  transform: translateY(-0.6rem);
+  transition: all 250ms cubic-bezier(0, 0, 0.26, 2.16);
+}
+
+.btn-fg-pos-pressed {
+  transform: translateY(-0.1rem);
+  transition: all 150ms linear;
+}
+/* .btn-fg-pos-default:hover {
+  transform: translateY(-0.8rem);
+} */
