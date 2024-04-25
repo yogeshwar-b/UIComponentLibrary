@@ -21,7 +21,11 @@ function App() {
         }}
       >
         {ComponentList.map((item) => {
-          return <option value={item}>{item}</option>
+          return (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          )
         })}
       </select>
       {RenderComponent(SelectedItem)}
@@ -47,7 +51,14 @@ function RenderComponent(SelectedItem) {
     case 'ArcadeButton':
       return <ArcadeButton></ArcadeButton>
     case 'Text3dButton':
-      return <Text3dButton ButtonText='Text 3d Button' />
+      return (
+        <Text3dButton
+          OnButtonClick={() => {
+            console.log('button clicked')
+          }}
+          ButtonText='Text 3d Button'
+        />
+      )
     default:
       return (
         <div>
