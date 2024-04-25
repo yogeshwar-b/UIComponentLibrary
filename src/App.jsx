@@ -4,6 +4,7 @@ import ToggleSwitch from './components/toggleswitch'
 import ThemeButton from './components/ThemeButton/ThemeButton'
 import { defaultselection, ComponentList } from './constants'
 import ArcadeButton from './components/ArcadeButton/ArcadeButton'
+import Text3dButton from './components/Text3DButton/Text3dButton'
 /**
  * Returns text Initial Project.
  * @todo Handle the default theme with checkbox
@@ -20,7 +21,11 @@ function App() {
         }}
       >
         {ComponentList.map((item) => {
-          return <option value={item}>{item}</option>
+          return (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          )
         })}
       </select>
       {RenderComponent(SelectedItem)}
@@ -45,6 +50,15 @@ function RenderComponent(SelectedItem) {
       return <ToggleSwitch></ToggleSwitch>
     case 'ArcadeButton':
       return <ArcadeButton></ArcadeButton>
+    case 'Text3dButton':
+      return (
+        <Text3dButton
+          OnButtonClick={() => {
+            console.log('button clicked')
+          }}
+          ButtonText='Text 3d Button'
+        />
+      )
     default:
       return (
         <div>
