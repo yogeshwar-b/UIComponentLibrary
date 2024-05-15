@@ -5,6 +5,7 @@ import ThemeButton from './components/ThemeButton/ThemeButton'
 import { defaultselection, ComponentList } from './constants'
 import ArcadeButton from './components/ArcadeButton/ArcadeButton'
 import Text3dButton from './components/Text3DButton/Text3dButton'
+import { DraggableList } from './components/DraggableList/DraggableList'
 /**
  * Returns text Initial Project.
  * @todo Handle the default theme with checkbox
@@ -57,6 +58,16 @@ function RenderComponent(SelectedItem) {
             console.log('button clicked')
           }}
           ButtonText='Text 3d Button'
+        />
+      )
+    case 'DraggableList':
+      return (
+        <DraggableList
+          itemlist={[
+            <div style={{ backgroundColor: 'yellow' }}>b1</div>,
+            <div style={{ backgroundColor: 'yellow' }}>b2</div>,
+            <div style={{ backgroundColor: 'yellow' }}>b3</div>,
+          ]}
         />
       )
     default:
