@@ -14,7 +14,7 @@ function App() {
   document.body.classList.add('home-bg', 'dark-home-bg')
   const [SelectedItem, SetSelection] = useState(defaultselection)
   return (
-    <>
+    <div style={{ padding: '1rem' }}>
       <select
         defaultValue={defaultselection}
         onChange={(e) => {
@@ -30,7 +30,7 @@ function App() {
         })}
       </select>
       {RenderComponent(SelectedItem)}
-    </>
+    </div>
   )
 }
 
