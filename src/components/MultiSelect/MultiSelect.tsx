@@ -1,29 +1,20 @@
-import React, { useReducer, useState } from 'react'
+import React, { Dispatch, SetStateAction, useReducer, useState } from 'react'
 import './MultiSelect.css'
 interface optionsType {
   value: string
   label: string
 }
-const options: optionsType[] = [
-  { value: 'apple', label: 'Apple' },
-  { value: 'banana', label: 'Banana' },
-  { value: 'cherry', label: 'Cherry' },
-  { value: 'grape', label: 'Grape' },
-  { value: 'kiwi', label: 'Kiwi' },
-  { value: 'mango', label: 'Mango' },
-  { value: 'orange', label: 'Orange' },
-  { value: 'peach', label: 'Peach' },
-  { value: 'pear', label: 'Pear' },
-  { value: 'watermelon', label: 'Watermelon' }
-]
-const defaultSelected = ['pear', 'watermelon']
 
 interface selectStateType {
   value: string
   label: string
   isSelected: boolean
 }
-const MultiSelect = () => {
+interface MultiSelectProps {
+  options: optionsType[]
+  defaultSelected: string[]
+}
+const MultiSelect = ({ options, defaultSelected }: MultiSelectProps) => {
   const defaultSelectionState: selectStateType[] = options.map((o) => {
     if (defaultSelected.includes(o.value)) {
       return { ...o, isSelected: true }
@@ -36,6 +27,10 @@ const MultiSelect = () => {
     selectStateReducer,
     defaultSelectionState
   )
+  const [showOptions, changeShowOptions]: [
+    boolean,
+    Dispatch<SetStateAction<boolean>>
+  ] = useState(false)
   function handleSelect(selectValue: string) {
     dispatch({ type: 'selected', selectedValue: selectValue })
   }
@@ -44,9 +39,8 @@ const MultiSelect = () => {
   }
   return (
     <div className='w-max pos-rel'>
-      <div>This is MultiSelect</div>
       <div id='multi-select' className='flex-row multi-select padding-1'>
-        <div className='flex-row flex-1 gap-1'>
+        <div className='flex-row flex-1 gap-1 flex-wrap'>
           {selectState.map((s) => {
             if (s.isSelected)
               return (
@@ -54,12 +48,33 @@ const MultiSelect = () => {
               )
           })}
         </div>
-        <div>⬇</div>
+        {showOptions ? (
+          <div
+            onClick={() => {
+              changeShowOptions(!showOptions)
+            }}
+            className='mouse-pointer'
+          >
+            ✖
+          </div>
+        ) : (
+          <div
+            onClick={() => {
+              changeShowOptions(!showOptions)
+            }}
+            className='mouse-pointer'
+          >
+            ⬇
+          </div>
+        )}
       </div>
-      <div className='w-max pos-abs'>
-        <OptionsPanel Options={selectState} handleSelect={handleSelect} />
-      </div>
-      <div>DJSFHISJFH asudfh df</div>
+      {showOptions ? (
+        <div className='w-max pos-abs'>
+          <OptionsPanel Options={selectState} handleSelect={handleSelect} />
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   )
 

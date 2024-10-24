@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .pos-rel {
   position: relative;
 }
@@ -48,4 +51,8 @@
 
 .option-highlight:hover {
   background-color: rgb(8, 102, 234);
+}
+
+.mouse-pointer:hover {
+  cursor: pointer;
 }

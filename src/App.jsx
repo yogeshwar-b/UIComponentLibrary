@@ -60,8 +60,23 @@ function RenderComponent(SelectedItem) {
           ButtonText='Text 3d Button'
         />
       )
-    case 'MultiSelect':
-      return <MultiSelect />
+    case 'MultiSelect': {
+      const options = [
+        { value: 'apple', label: 'Apple' },
+        { value: 'banana', label: 'Banana' },
+        { value: 'cherry', label: 'Cherry' },
+        { value: 'grape', label: 'Grape' },
+        { value: 'kiwi', label: 'Kiwi' },
+        { value: 'mango', label: 'Mango' },
+        { value: 'orange', label: 'Orange' },
+        { value: 'peach', label: 'Peach' },
+        { value: 'pear', label: 'Pear' },
+        { value: 'watermelon', label: 'Watermelon' }
+      ]
+      const defaultSelected = ['pear', 'watermelon']
+
+      return <MultiSelect options={options} defaultSelected={defaultSelected} />
+    }
     default:
       return (
         <div>
