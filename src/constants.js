@@ -1,7 +1,8 @@
-export const defaultselection = 'Text3dButton'
+export const defaultselection = 'FloatingCards'
 export const ComponentList = [
   'Text3dButton',
   'ThemeButton',
   'ToggleSwitch',
-  'ArcadeButton'
+  'ArcadeButton',
+  'FloatingCards'
 ]
