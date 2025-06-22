@@ -1,0 +1,10 @@
+.draggable-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: #f9f9f9;
+  cursor: grab;
+}
