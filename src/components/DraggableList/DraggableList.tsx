@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import './DraggableList.css'
 
 const DraggableList = ({ children }: { children: React.ReactNode }) => {
   const initialItems = React.Children.toArray(children)
@@ -40,7 +39,6 @@ const DraggableList = ({ children }: { children: React.ReactNode }) => {
             onDragEnter={() => handleDragEnter(idx)}
             onDragEnd={handleDragEnd}
             onDragOver={(e) => e.preventDefault()}
-            className='draggable-item'
           >
             {child}
           </div>
